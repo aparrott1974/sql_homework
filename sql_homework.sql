@@ -388,7 +388,7 @@ from sakila.category ct
 group by
 	ct.name
 order by sum(pm.amount) desc
-
+limit 5
 ;
 
 

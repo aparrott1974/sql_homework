@@ -137,21 +137,8 @@ where actor_id = 172
 NOTE:
 i need to figure out what's going on after phone 
 */
-
-use sakila;
-CREATE TABLE address (
-  address_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  address VARCHAR(50) NOT NULL,
-  address2 VARCHAR(50) DEFAULT NULL,
-  district VARCHAR(20) NOT NULL,
-  city_id SMALLINT UNSIGNED NOT NULL,
-  postal_code VARCHAR(10) DEFAULT NULL,
-  phone VARCHAR(20) NOT NULL,
-  last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY  (address_id),
-  KEY idx_fk_city_id (city_id),
-  CONSTRAINT `fk_address_city` FOREIGN KEY (city_id) REFERENCES city (city_id) ON DELETE RESTRICT ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+show create table sakila.address;
+/*
 
 /*
   * Hint: <https://dev.mysql.com/doc/refman/5.7/en/show-create-table.html>
